@@ -1,6 +1,6 @@
 """
 ETF Tracker Project
-Author: Your Name
+Author: Artthana Ravi
 Description:
     - Downloads historical ETF data from Yahoo Finance
     - Calculates daily and cumulative returns
@@ -17,7 +17,7 @@ import streamlit as st
 
 st.set_page_config(page_title="ETF Tracker", layout="wide")
 
-st.title("📊 ETF Tracker Dashboard")
+st.title(" ETF Tracker Dashboard")
 
 # Sidebar inputs
 st.sidebar.header("Portfolio Settings")
@@ -62,7 +62,7 @@ drawdown = (1 + portfolio_daily_returns).cumprod() / rolling_max - 1
 max_drawdown = drawdown.min()
 
 # Display metrics
-st.subheader("📈 Portfolio Risk Metrics")
+st.subheader(" Portfolio Risk Metrics")
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Annualized Return", f"{portfolio_annual_return:.2%}")
 col2.metric("Annualized Volatility", f"{portfolio_volatility:.2%}")
@@ -87,7 +87,7 @@ ax2.legend()
 st.pyplot(fig2)
 
 # Download buttons
-st.subheader("📂 Download Data")
+st.subheader(" Download Data")
 st.download_button("ETF Prices CSV", adj_close.to_csv().encode(), "etf_prices.csv")
 st.download_button("Daily Returns CSV", daily_returns.to_csv().encode(), "etf_daily_returns.csv")
 st.download_button("Portfolio Daily Returns CSV", portfolio_daily_returns.to_csv().encode(), "portfolio_daily_returns.csv")
